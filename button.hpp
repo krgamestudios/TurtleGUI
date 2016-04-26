@@ -61,6 +61,7 @@ public:
 protected:
 	bool CheckBounds(int x, int y);
 
+	//NOTE: Button makes it's own internal copy of the background texture
 	Image image;
 	State state = State::IDLE;
 	int posX = 0, posY = 0;
