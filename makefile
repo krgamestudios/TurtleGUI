@@ -1,5 +1,5 @@
 #config
-INCLUDES+=.
+INCLUDES+=. ..
 LIBS+=
 CXXFLAGS+=-std=c++11 $(addprefix -I,$(INCLUDES))
 
@@ -10,7 +10,7 @@ CXXSRC=$(wildcard *.cpp)
 OBJDIR=obj
 OBJ+=$(addprefix $(OBJDIR)/,$(CXXSRC:.cpp=.o))
 
-OUTDIR=.
+OUTDIR=..
 OUT=libturtlegui.a
 
 #targets
