@@ -1,6 +1,6 @@
 ## Outline
 
-TurtleGUI requires SDL2, SDL_image and SDL_ttf. It also requires Image and BoundingBox from [Tortuga](https://github.com/Ratstail91/Tortuga) which have been included.
+TurtleGUI requires SDL2, SDL_image and SDL_ttf. It also requires Image and BoundingBox from [Tortuga](https://github.com/Ratstail91/Tortuga).
 
 ## Copyright
 
