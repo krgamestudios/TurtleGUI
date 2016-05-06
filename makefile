@@ -11,7 +11,7 @@ OBJDIR=obj
 OBJ+=$(addprefix $(OBJDIR)/,$(CXXSRC:.cpp=.o))
 
 OUTDIR=..
-OUT=libturtlegui.a
+OUT=$(addprefix $(OUTDIR)/,libturtlegui.a)
 
 #targets
 all: $(OBJ) $(OUT)
