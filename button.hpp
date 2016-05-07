@@ -58,6 +58,8 @@ public:
 	int GetX() const;
 	int GetY() const;
 
+	Image* GetImage();
+
 protected:
 	bool CheckBounds(int x, int y);
 

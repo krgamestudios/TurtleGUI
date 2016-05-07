@@ -42,7 +42,7 @@ void Button::SetBackgroundTexture(SDL_Renderer* renderer, SDL_Texture* texture) 
 	//get the w & h, & create
 	int w = 0, h = 0;
 	SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
-	image.Create(renderer, w, h);
+	image.Create(renderer, w, h, {0, 0, 0, 0});
 
 	//copy
 	SDL_SetRenderTarget(renderer, image.GetTexture());
@@ -154,6 +154,10 @@ int Button::GetX() const {
 
 int Button::GetY() const {
 	return posY;
+}
+
+Image* Button::GetImage() {
+	return &image;
 }
 
 bool Button::CheckBounds(int x, int y) {
