@@ -23,7 +23,7 @@
 
 #include <stdexcept>
 
-SDL_Texture* renderTextTexture(SDL_Renderer* renderer, TTF_Font* font, SDL_Color color, std::string str) {
+SDL_Texture* renderTextTexture(SDL_Renderer* const renderer, TTF_Font* font, SDL_Color color, std::string str) {
 	//make the surface (from SDL_ttf)
 	SDL_Surface* surface = TTF_RenderUTF8_Blended(font, str.c_str(), color);
 	if (!surface) {
@@ -43,4 +43,13 @@ SDL_Texture* renderTextTexture(SDL_Renderer* renderer, TTF_Font* font, SDL_Color
 
 	//NOTE: free the texture yourself
 	return texture;
+}
+
+void renderTextDirect(SDL_Renderer* const renderer, TTF_Font* font, SDL_Color color, std::string str, int x, int y) {
+	int w = 0, h = 0;
+	SDL_Texture* tmpTex = renderTextTexture(renderer, font, color, str);
+	SDL_QueryTexture(tmpTex, nullptr, nullptr, &w, &h);
+	SDL_Rect dclip = {x, y, w, h};
+	SDL_RenderCopy(renderer, tmpTex, nullptr, &dclip);
+	SDL_DestroyTexture(tmpTex);
 }

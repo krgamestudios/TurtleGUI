@@ -26,4 +26,5 @@
 
 #include <string>
 
-SDL_Texture* renderTextTexture(SDL_Renderer*, TTF_Font*, SDL_Color color, std::string);
+SDL_Texture* renderTextTexture(SDL_Renderer* const, TTF_Font*, SDL_Color color, std::string);
+void renderTextDirect(SDL_Renderer* const renderer, TTF_Font* font, SDL_Color color, std::string str, int x, int y);
