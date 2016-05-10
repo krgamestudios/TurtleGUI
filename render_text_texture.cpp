@@ -25,7 +25,7 @@
 
 SDL_Texture* renderTextTexture(SDL_Renderer* renderer, TTF_Font* font, SDL_Color color, std::string str) {
 	//make the surface (from SDL_ttf)
-	SDL_Surface* surface = TTF_RenderText_Solid(font, str.c_str(), color);
+	SDL_Surface* surface = TTF_RenderUTF8_Blended(font, str.c_str(), color);
 	if (!surface) {
 		throw(std::runtime_error("Failed to create a TTF surface"));
 	}
