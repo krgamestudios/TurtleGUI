@@ -45,7 +45,7 @@ void TextBox::PushLine(SDL_Renderer* renderer, TTF_Font* font, SDL_Color color, 
 	lineList.emplace_back(renderer, font, color, str, 0, 0);
 }
 
-void TextBox::PopLine(int num) {
+void TextBox::PopLines(int num) {
 	//prevent underflow
 	num < lineList.size() ? num : lineList.size();
 
@@ -72,4 +72,8 @@ int TextBox::GetX() const {
 
 int TextBox::GetY() const {
 	return posY;
+}
+
+std::list<TextLine>* TextBox::GetContainer() {
+	return &lineList;
 }

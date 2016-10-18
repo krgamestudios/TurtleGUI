@@ -37,13 +37,15 @@ public:
 	void DrawTo(SDL_Renderer*);
 
 	void PushLine(SDL_Renderer*, TTF_Font*, SDL_Color color, std::string);
-	void PopLine(int num = 1);
+	void PopLines(int num = 1);
 	void ClearLines();
 
 	int SetX(int i);
 	int SetY(int i);
 	int GetX() const;
 	int GetY() const;
+
+	std::list<TextLine>* GetContainer();
 
 private:
 	std::list<TextLine> lineList;
