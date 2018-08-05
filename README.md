@@ -1,10 +1,19 @@
 ## Outline
 
-TurtleGUI requires SDL2, SDL_image and SDL_ttf. Other than that, it should be a self contained package.
+TurtleGUI requires SDL2, SDL2_image and SDL2_ttf. Other than that, it should be a self contained package.
+
+## Contents
+
+* Image - For loading and rendering an image to the screen
+* Button - For on-screen buttons that can be clicked
+* TextLine - For rendering a single line of text to the screen
+* TextBox - A collection of TextLines, and utilities for managing them
+* TextField - For inputting text, rendered to the screen
+* Vector2 - I don't know where else to put this
 
 ## Copyright
 
-Copyright (c) 2013-2016 Kayne Ruse
+Copyright (c) 2013-2018 Kayne Ruse
 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 

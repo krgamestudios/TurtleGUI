@@ -34,6 +34,7 @@ public:
 
 	void DrawTo(SDL_Renderer*);
 
+	//TODO: replace TTF_Font* with a font class
 	void SetText(SDL_Renderer*, TTF_Font*, SDL_Color, std::string);
 	void ClearText();
 

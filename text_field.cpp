@@ -69,19 +69,28 @@ std::string TextField::GetText() {
 }
 
 bool TextField::MouseButtonDown(SDL_MouseButtonEvent const& event) {
-	BoundingBox cursorBox = {event.x, event.y, 0, 0};
-	BoundingBox fieldBox = bounds;
-	fieldBox.x += posX;
-	fieldBox.y += posY;
-	return focus = fieldBox.CheckOverlap(cursorBox);
+	focus =
+		event.x > posX &&
+		event.y > posY &&
+		event.x < posX + width &&
+		event.y < posY + height;
+	return focus;
 }
 
-BoundingBox TextField::SetBounds(BoundingBox b) {
-	return bounds = b;
+int TextField::SetWidth(int w) {
+	return width = w;
 }
 
-BoundingBox TextField::GetBounds() {
-	return bounds;
+int TextField::SetHeight(int h) {
+	return height = h;
+}
+
+int TextField::GetWidth() {
+	return width;
+}
+
+int TextField::GetHeight() {
+	return height;
 }
 
 bool TextField::SetFocus(bool b) {

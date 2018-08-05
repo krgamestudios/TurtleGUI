@@ -21,8 +21,6 @@
 */
 #pragma once
 
-#include "bounding_box.hpp"
-
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_ttf.h"
 
@@ -44,8 +42,10 @@ public:
 
 	bool MouseButtonDown(SDL_MouseButtonEvent const& event);
 
-	BoundingBox SetBounds(BoundingBox b);
-	BoundingBox GetBounds();
+	int SetWidth(int w);
+	int SetHeight(int h);
+	int GetWidth();
+	int GetHeight();
 
 	bool SetFocus(bool b);
 	bool GetFocus();
@@ -59,7 +59,7 @@ public:
 private:
 	SDL_Texture* texture = nullptr;
 	std::string text;
-	BoundingBox bounds;
 	bool focus = false;
 	int posX = 0, posY = 0;
+	int width = 0, height = 0;
 };
